@@ -7,7 +7,7 @@
  ************************************************************************/
 #include <iostream>
 
-#include "skip_list.hpp"
+#include "skiplist.hpp"
 #define FILE_PATH "../store/dumpFile"
 
 int main() {

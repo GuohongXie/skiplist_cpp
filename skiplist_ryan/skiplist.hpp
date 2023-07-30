@@ -6,6 +6,9 @@
 > Description:
  ************************************************************************/
 
+#ifndef RYAN_SKIPLIST_H_
+#define RYAN_SKIPLIST_H_
+
 #include <cmath>
 #include <cstdlib>
 #include <cstring>
@@ -14,7 +17,7 @@
 #include <iostream>
 #include <mutex>
 
-#define STORE_FILE "store/dump_file"
+#define STORE_FILE "store/dumpfile"
 
 std::string delimiter = ":";
 
@@ -79,7 +82,7 @@ class SkipList {
   SkipList(int);
   ~SkipList();
   int GetRandomLevel();
-  Node<K, V>* CreateNode(K, V, int);
+  Node<K, V>* CreateNode(const K&, const V&, int);
   int InsertElement(K, V);
   void DisplayList();
   bool SearchElement(K);
@@ -114,8 +117,8 @@ class SkipList {
 
 // create new node
 template <typename K, typename V>
-Node<K, V>* SkipList<K, V>::CreateNode(const K k, const V v, int level) {
-  Node<K, V>* n = new Node<K, V>(k, v, level);
+Node<K, V>* SkipList<K, V>::CreateNode(const K& k, const V& v, int level) {
+  auto* n = new Node<K, V>(k, v, level);
   return n;
 }
 
@@ -403,3 +406,5 @@ int SkipList<K, V>::GetRandomLevel() {
   return k;
 };
 // vim: et tw=100 ts=4 sw=4 cc=120
+
+#endif //RYAN_SKIPLIST_H_

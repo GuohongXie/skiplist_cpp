@@ -13,7 +13,7 @@
 #include <cstdlib>
 #include <iostream>
 
-#include "skip_list.hpp"
+#include "skiplist.hpp"
 
 constexpr int NUM_THREADS = 1;
 constexpr int TEST_COUNT = 100000;
