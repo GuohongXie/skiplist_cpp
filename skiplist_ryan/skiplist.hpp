@@ -19,7 +19,6 @@
 
 #define STORE_FILE "store/dumpfile"
 
-std::string delimiter = ":";
 
 // Class template to implement node
 template <typename K, typename V>
@@ -79,7 +78,7 @@ void Node<K, V>::set_value(V value) {
 template <typename K, typename V>
 class SkipList {
  public:
-  SkipList(int);
+  explicit SkipList(int);
   ~SkipList();
   int GetRandomLevel();
   Node<K, V>* CreateNode(const K&, const V&, int);
@@ -275,8 +274,8 @@ void SkipList<K, V>::GetKeyValueFromString(const std::string& str,
   if (!IsValidString(str)) {
     return;
   }
-  *key = str.substr(0, str.find(delimiter));
-  *value = str.substr(str.find(delimiter) + 1, str.length());
+  *key = str.substr(0, str.find(':'));
+  *value = str.substr(str.find(':') + 1, str.length());
 }
 
 template <typename K, typename V>
@@ -284,7 +283,7 @@ bool SkipList<K, V>::IsValidString(const std::string& str) {
   if (str.empty()) {
     return false;
   }
-  if (str.find(delimiter) == std::string::npos) {
+  if (str.find(':') == std::string::npos) {
     return false;
   }
   return true;
