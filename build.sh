@@ -1,5 +1,5 @@
 #########################################################################
-# File Name:    stress_test_start.sh
+# File Name:    build.sh
 # Author:       ryan
 # mail:         xieg678@gmail.com
 # Created Time: Wed Jan 30 20:05:15 2019
@@ -7,6 +7,8 @@
 #!/bin/bash
 
 set -x
+
+rm -rf build
 
 SOURCE_DIR=`pwd`
 BUILD_DIR=${BUILD_DIR:-./build}
@@ -23,6 +25,7 @@ mkdir -p $BUILD_DIR/$BUILD_TYPE \
            -DCMAKE_BUILD_TYPE=$BUILD_TYPE \
            -DCMAKE_INSTALL_PREFIX=$INSTALL_DIR \
            -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+           -DCMAKE_CXX_COMPILER=clang++ \
            $SOURCE_DIR \
   && make $*
 

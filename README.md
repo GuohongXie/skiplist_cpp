@@ -1,48 +1,46 @@
-# skiplist-c++
+# skiplist-cpp
 
  A tiny KV storage based on skiplist written in C++ language
 
-# interface
+## interface
 
-* InsertElement
-* DeleteElement 
-* SearchElement
-* DisplayList
-* DumpFile 
-* LoadFile
-* size
+* `InsertElement`
+* `DeleteElement`
+* `SearchElement`
+* `DisplayList`
+* `DumpFile`
+* `LoadFile`
+* `size`
 
-# performance data  
+## performance data  
+测试环境：
+- Intel i7-7700HQ 
+- 16 G main memory
 
-## insert
+### insert
 
-skiplist tree high:18
+skiplist tree high: 18
 insert random key
 
 |insert element num (w) | timecost (s)  |
 |---|---|
-|10 |0.316763 |
-|50 |1.86778 |
-|100 |4.10648 |
+| 10 | 1.38421 |
+| 50 | 7.13557 |
+| 100 | 15.3014 |
 
-qps: 24.39w
+qps: 7.007w
 
-## get
+### get
 
 |search element (w) |timecost (s) |skiplist size (w)|
 |---|---| --- |
-|10|0.47148 |10|
-|50|2.56373 |50|
-|100|5.43204 |100|
+| 10 | 1.98734 | 10 |
+| 50 | 10.3111 | 50 |
+| 100 | 20.5816 | 100 |
 
-qps:18.41w
+qps: 4.84914w
 
 
-# USAGE
+## USAGE
 
 Just include skip_list.hpp in your code
-
-
-
-# Todo 
-

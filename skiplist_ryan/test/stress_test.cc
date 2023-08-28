@@ -6,12 +6,12 @@
 > Description:
  ************************************************************************/
 
-#include <pthread.h>
-#include <time.h>
-
+#include <ctime>
 #include <chrono>
 #include <cstdlib>
 #include <iostream>
+
+#include <pthread.h>
 
 #include "skiplist.hpp"
 
